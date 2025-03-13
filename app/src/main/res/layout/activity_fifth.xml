@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FifthActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Desk Setup"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:padding="15dp"
+            android:background="#FF00A1"
+            android:textColor="@color/white"
+            android:layout_marginBottom="10dp"
+            />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/deskAnimation"
+            android:layout_width="match_parent"
+            android:layout_height="367dp"
+            android:layout_marginBottom="15dp"
+            android:padding="10dp"
+            app:lottie_rawRes="@raw/desk"
+            app:lottie_loop="true" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/play"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="Play"
+            android:textAllCaps="false"
+            android:textSize="22sp"
+            android:background="#197FAC"
+            android:textColor="@color/white"
+            />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/pause"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="Pause"
+            android:textAllCaps="false"
+            android:textSize="22sp"
+            android:background="#FF1744"
+            android:textColor="@color/white"
+            />
+
+    </LinearLayout>
+
+</ScrollView>

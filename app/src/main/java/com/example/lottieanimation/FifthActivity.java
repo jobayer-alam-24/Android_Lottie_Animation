@@ -1,6 +1,5 @@
 package com.example.lottieanimation;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -14,58 +13,47 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.airbnb.lottie.LottieAnimationView;
 
-public class MainActivity extends AppCompatActivity {
+public class FifthActivity extends AppCompatActivity {
 
-    LottieAnimationView boatAnimation;
-    AppCompatButton play, pause, next;
+    AppCompatButton play, pause;
+    LottieAnimationView deskAnimation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_fifth);
 
-        boatAnimation = findViewById(R.id.boatAnimation);
         play = findViewById(R.id.play);
         pause = findViewById(R.id.pause);
-        next = findViewById(R.id.next);
-
-        next.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent second = new Intent(MainActivity.this, SecondActivity.class);
-                startActivity(second);
-            }
-        });
+        deskAnimation = findViewById(R.id.deskAnimation);
 
         play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!boatAnimation.isAnimating())
+                if(!deskAnimation.isAnimating())
                 {
-                    boatAnimation.playAnimation();
+                    deskAnimation.playAnimation();
                 }
                 else
                 {
-                    Toast.makeText(MainActivity.this, "Animation is already playing", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(FifthActivity.this, "Animation is already playing", Toast.LENGTH_LONG).show();
                 }
             }
         });
         pause.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(boatAnimation.isAnimating())
+                if(deskAnimation.isAnimating())
                 {
-                    boatAnimation.pauseAnimation();
+                    deskAnimation.pauseAnimation();
                 }
                 else
                 {
-                    Toast.makeText(MainActivity.this, "Animation is already paused", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(FifthActivity.this, "Animation is already paused", Toast.LENGTH_LONG).show();
                 }
             }
         });
-
-
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());

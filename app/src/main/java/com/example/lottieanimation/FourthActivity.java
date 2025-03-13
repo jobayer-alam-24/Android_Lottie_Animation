@@ -1,5 +1,6 @@
 package com.example.lottieanimation;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -14,58 +15,55 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.airbnb.lottie.LottieAnimationView;
 
-public class MainActivity extends AppCompatActivity {
+public class FourthActivity extends AppCompatActivity {
 
-    LottieAnimationView boatAnimation;
+    LottieAnimationView waterAnimation;
     AppCompatButton play, pause, next;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_fourth);
 
-        boatAnimation = findViewById(R.id.boatAnimation);
-        play = findViewById(R.id.play);
+        waterAnimation = findViewById(R.id.waterAnimation);
         pause = findViewById(R.id.pause);
+        play = findViewById(R.id.play);
         next = findViewById(R.id.next);
 
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent second = new Intent(MainActivity.this, SecondActivity.class);
-                startActivity(second);
+                Intent fifth = new Intent(FourthActivity.this, FifthActivity.class);
+                startActivity(fifth);
             }
         });
-
         play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!boatAnimation.isAnimating())
+                if(!waterAnimation.isAnimating())
                 {
-                    boatAnimation.playAnimation();
+                    waterAnimation.playAnimation();
                 }
                 else
                 {
-                    Toast.makeText(MainActivity.this, "Animation is already playing", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(FourthActivity.this, "Animation is already playing", Toast.LENGTH_LONG).show();
                 }
             }
         });
         pause.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(boatAnimation.isAnimating())
+                if(waterAnimation.isAnimating())
                 {
-                    boatAnimation.pauseAnimation();
+                    waterAnimation.pauseAnimation();
                 }
                 else
                 {
-                    Toast.makeText(MainActivity.this, "Animation is already paused", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(FourthActivity.this, "Animation is already paused", Toast.LENGTH_LONG).show();
                 }
             }
         });
-
-
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
